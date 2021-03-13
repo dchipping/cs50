@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                let cardiff = document.querySelector('.cardiff');
+                cardiff.addEventListener('click', function() {
+                    cardiff.style.backgroundColor = 'red';
+                    document.querySelector('#response').innerHTML = 'Incorrect!';
+                });
+                let edinburgh = document.querySelector('.edinburgh');
+                edinburgh.addEventListener('click', function() {
+                    edinburgh.style.backgroundColor = 'red';
+                    document.querySelector('#response').innerHTML = 'Incorrect!';
+                });
+                let london = document.querySelector('.london');
+                london.addEventListener('click', function() {
+                    london.style.backgroundColor = 'green';
+                    document.querySelector('#response').innerHTML = 'Correct!';
+                });
+
+                let box = document.querySelector('.box');
+                let submit = document.querySelector('.submit');
+                submit.addEventListener('click', function() {
+                    if (box.value == 'Oslo' || box.value == 'oslo') {
+                        box.style.backgroundColor = 'green';
+                        document.querySelector('#response2').innerHTML = 'Correct!';
+                    } else {
+                        box.style.backgroundColor = 'red';
+                        document.querySelector('#response2').innerHTML = 'Incorrect!';
+                    }
+                });
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+
+                <h3>What's the Capital of the United Kingdom?</h3>
+                <!-- TODO: Add multiple choice question here -->
+                <button class="edinburgh">Edinburgh</button>
+                <button class="cardiff">Cardiff</button>
+                <button class="london">London</button>
+
+                <p id="response"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What's the Capital of Norway?</h3>
+                <!-- TODO: Add free response question here -->
+                <input class="box" autocomplete="off" placeholder="City" type="text">
+                <button class="submit">Submit</button>
+
+                <p id="response2"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: Sorted: [0.013, 0.19, 2.4] - Random: [0.059, 0.457, 16.3] - Reversed: [0.121, 0.357, 11.2] - Bubble sort Omega(n*log(n)) on sorted list
+
+sort2 uses: merge sort
+
+How do you know?: Sorted: [0.012, 0.18, 2.6] - Random: [0.012, 0.02, 2.7] - QED It's the fastest O(n*log(n))
+
+sort3 uses: selection sort
+
+How do you know?: Sorted: [0.033, 0.2, 7.2] - Random: [0.032, 0.191, 7.18] - Reversed: [0.032, 0.228, 7.8] - Elimination leaves selection
