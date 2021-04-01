@@ -1,0 +1,3 @@
+[submodule "week8/pset8/hybrid-end-effector-concept"]
+	path = week8/pset8/hybrid-end-effector-concept
+	url = https://github.com/dchipping/hybrid-end-effector-concept.git
