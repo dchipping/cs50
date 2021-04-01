@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Purchase Confirmation
+{% endblock %}
+
+{% block main %}
+    <h2>Purchase Confirmation</h2>
+    <br>
+    <h4>Bought {{ shares }} unit of {{ quote.name }} ({{ quote.symbol }}) @ {{ quote.price | usd }}</h4>
+    <h4>Total Price: {{ total | usd }}</h4>
+    <h4>Remaining Cash: {{ cash | usd }}</h4>
+    <br>
+    <form action="/buy" method="get">
+        <button class="btn btn-primary" type="submit">Buy Again</button>
+    </form>
+{% endblock %}

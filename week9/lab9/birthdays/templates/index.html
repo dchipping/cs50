@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post">
+                    <input type="text" name="name" placeholder="Name" autocomplete="off" maxlength="10" required />
+                    <select name="month" required>
+                        <option value="" disabled selected>Month</option>
+                        {% for month in valid_months %}
+                            <option value="{{ month[0] }}">{{ month[1] }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="day" required>
+                        <option value="" disabled selected>Day</option>
+                        {% for day in valid_days %}
+                            <option value="{{ day }}">{{ day }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Add Birthday" />
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <!--<th>Modify</th>-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for user in users %}
+                            <tr>
+                                <td class="colored-column">{{ user.name }}</td>
+                                <td class="colored-column">{{ user.month }}/{{ user.day }}</td>
+                                <td class="delete-column">
+                                    <form action="/delete" method="post">
+                                        <input type="hidden" name="name" value="{{ user.name }}" />
+                                        <input type="hidden" name="month" value="{{ user.month }}" />
+                                        <input type="hidden" name="day" value="{{ user.day }}" />
+                                        <input type="submit" value="Delete"/>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

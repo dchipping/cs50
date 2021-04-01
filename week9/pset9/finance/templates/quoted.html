@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h2>Quote for {{ quote.symbol }}</h2>
+    <h3>{{ quote.name }} @</h3>
+    <h3>{{ quote.price | usd }}</h3>
+    <form action="/quote" method="get">
+        <button class="btn btn-primary" type="submit">Another Quote</button>
+    </form>
+{% endblock %}
